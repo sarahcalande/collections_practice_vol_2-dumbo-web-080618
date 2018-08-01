@@ -26,6 +26,7 @@ a.group_by(&:itself)
  .map{|k, v| k.merge(count: v.length)}
 end
 
+<<<<<<< HEAD
 def merge_data(arr1, arr2)
 	merged =[]
 	arr1.each_index do |i|
@@ -34,13 +35,25 @@ def merge_data(arr1, arr2)
 		end
 	end
 	merged
+=======
+def merge_data(keys, data)
+(keys + data)
+  .group_by { |keys| keys[:data] }
+  .map { |keys, data| data if data.count > 1 }
+>>>>>>> 42227e5d17c00f4db9b1a8ea7313de3bc9474b74
 end
 
 
 def find_cool(array)
+<<<<<<< HEAD
   array.select do |item| 
     item.has_value?('cool')
   end
+=======
+    array.select do |word|
+  word.include?('cool')
+end
+>>>>>>> 42227e5d17c00f4db9b1a8ea7313de3bc9474b74
 end
 
 def organize_schools(array)
